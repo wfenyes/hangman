@@ -19,6 +19,60 @@ def takeGuess():
         letterGuess = input("Alright, guess a letter.\n")
         return letterGuess
 
+def drawMan(guessNumber):
+    pictureOptions = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
+
+
+    return pictureOptions[guessNumber]
 
 def playHangman():
     keyWord = getName()
@@ -30,8 +84,8 @@ def playHangman():
         else:
             print("done")
             break
-
+    
 
     
 
-playHangman()
+print(drawMan(1))
