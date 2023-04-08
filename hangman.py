@@ -76,16 +76,27 @@ def drawMan(guessNumber):
 
 def playHangman():
     keyWord = getName()
+    keyWordLength = len(keyWord)
+    guessCounter = 0
+    print(f"Word is {keyWordLength} letters long")
     guess = takeGuess()
-    while True:
+    if len(guess) == 1:
+        for i in keyWord:
+            if guess in keyWord:
+                print(f"Yes, {guess} is in the word!")
+            if guess not in keyWord:
+                print(f"I'm sorry {guess} is not in the word")
+                print(drawMan(guessCounter))
+                guessCounter += 1
+    elif len(guess) > 1:
         if guess == keyWord:
-            print("Congratulations!!!!")
-            break
-        else:
-            print("done")
-            break
+            Print(f"That's right! {guess} is the word!")
+    else:
+        print("I don't understand")
+
+    
     
 
     
 
-print(drawMan(1))
+playHangman()
